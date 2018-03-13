@@ -9,8 +9,7 @@ const session = require(`express-session`)
 const PORT = process.env.PORT || 3001;
 //Initiate Express
 const app = express();
-// Linking up Casey Harding
-//CASEY HARDING IS LINKED AND READY TO CODE!
+
 const mainRouter = require(`./routes/mainRouters/mainRouter`);
 const userRouter = require(`./routes/usersRouters/userRouter`);
 
