@@ -24,9 +24,9 @@ class LogIn extends Component{
     })
   }
   handleSubmit(e){
-    e.preventDeafult();
+    e.preventDefault()
     console.log(`made it to handleSubmit`);
-    axios.get('/api/auth')
+    axios.get('/auth')
     .then(result => {
       console.log(result)
       this.setState({
