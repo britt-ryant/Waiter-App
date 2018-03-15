@@ -6,7 +6,7 @@ class MenuList extends Component {
   constructor() {
     super();
     this.state = {
-      spiDataLoaded: false,
+      apiDataLoaded: false,
       apiData: null,
     };
   }
@@ -27,8 +27,8 @@ class MenuList extends Component {
   }
 
   renderItems() {
-    console.log('FINISHED LOADING DATA---->', this.props);
-    return this.state.apiData.map(item => {
+    console.log('FINISHED LOADING DATA---->', this.state.apiData);
+    return this.state.apiData.map(item=> {
       return <Item key={item.id} item={item} />;
     });
   }

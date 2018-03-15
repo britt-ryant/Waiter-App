@@ -21,7 +21,7 @@ module.exports = {
   },
 
   show(req, res, next) {
-    menu_db
+    menuDB
       .findById(req.params.id)
       .then(menuItem => {
         res.json({
@@ -66,6 +66,7 @@ module.exports = {
         description: req.body.description,
         course: req.body.course,
         cost: req.body.cost,
+        id: req.params.id,
       })
       .then(menuItem => {
         res.json({

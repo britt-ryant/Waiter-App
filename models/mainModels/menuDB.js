@@ -40,11 +40,11 @@ module.exports = {
           cost = $1,
           course = $2,
           name = $3,
-          description = $4,
+          description = $4
         WHERE id = $5
-        RETURNING *
+        RETURNING id
       `,
-      [item.cost, item.course, item.name, item.description, item.allergy]
+      [item.cost, item.course, item.name, item.description, item.id]
     );
   },
 

@@ -8,6 +8,7 @@ import {
 import Home from './components/Home';
 import MenuList from './components/MenuList';
 import MenuItemAddForm from './components/MenuItemAddForm';
+import MenuItemEditForm from './components/MenuItemEditForm';
 
 class App extends Component {
   render() {
@@ -22,7 +23,8 @@ class App extends Component {
             </nav>
               <Route exact path='/' component={Home} />
               <Route exact path='/menu' component={MenuList} />
-              <Route path='/menu/add' component={MenuItemAddForm} />
+              <Route exact path='/menu/add' component={MenuItemAddForm} />
+              <Route path='/menu/edit/:id' component={MenuItemEditForm} />
           </div>
       </div>
     </Router>

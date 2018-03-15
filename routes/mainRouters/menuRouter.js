@@ -11,9 +11,12 @@ menuRouter
   .post(menuController.create);
 
 menuRouter
-  .route(`/:id`)
+  .route(`/edit/:id`)
   .get(menuController.show)
-  .put(menuController.update)
+  .put(menuController.update);
+
+menuRouter
+  .route(`/:id`)
   .delete(menuController.destroy);
 
 //Export the router
