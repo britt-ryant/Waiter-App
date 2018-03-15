@@ -24,7 +24,7 @@ app.use(express.static(`public`));
 app.set(`views`, path.join(__dirname, `views`));
 app.set(`view engine`, `ejs`);
 
-app.use('/api/menuitem', menuRoutes);
+app.use('/api/menu', menuRouter);
 
 //******** testing that routes and controllers work ************
 app.use(`/testmenu`, menuRouter);

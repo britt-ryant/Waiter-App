@@ -11,6 +11,7 @@ module.exports = {
           data: menuItems,
         });
         console.log('GETTING ALL ITEMS WORKED--->', menuItems);
+
         //Dont forget to call next()
       })
       .catch(err => {
@@ -21,19 +22,19 @@ module.exports = {
 
   show(req, res, next) {
     menu_db
-    .getOne()
-    .then(menuItem => {
-      res.json({
-        message: 'got one menu item',
-        data: menuItem,
+      .getOne()
+      .then(menuItem => {
+        res.json({
+          message: 'got one menu item',
+          data: menuItem,
+        });
+        console.log('GETTING ONE ITEM WORKED--->', menuItem);
       })
-      console.log('GETTING ONE ITEM WORKED--->', menuItem);
-    })
-    .catch(err => {
-      console.log('GETTING ONE ITEM FAILED--->', err);
-      next(err);
-    })
-  }
+      .catch(err => {
+        console.log('GETTING ONE ITEM FAILED--->', err);
+        next(err);
+      });
+  },
 
   create(req, res, next) {
     menuDB
@@ -44,6 +45,7 @@ module.exports = {
           data: menuItem,
         });
         console.log('CREATING ITEM WORKED--->', menuItem);
+
         //Dont forget to call next()
       })
       .catch(err => {
@@ -58,9 +60,10 @@ module.exports = {
       .then(menuItem => {
         res.json({
           message: 'updated one menu item',
-          data: menuItem
+          data: menuItem,
         });
         console.log('UPDATING ITEM WORKED--->', menuItem);
+
         //Dont forget to call next()
       })
       .catch(err => {
@@ -74,6 +77,7 @@ module.exports = {
       .delete()
       .then(() => {
         console.log('DESTROYING ITEM WORKED');
+
         //Dont forget to call next()
       })
       .catch(err => {

@@ -5,27 +5,23 @@ import {
   Link
 } from 'react-router-dom';
 
-import ComponentOne from './components/ComponentOne';
-import ComponentTwo from './components/ComponentTwo';
-import ComponentThree from './components/ComponentThree';
+import Home from './components/Home';
+import MenuList from './components/MenuList';
 
 class App extends Component {
   render() {
     return (
+    <Router>
       <div>
-        <Router>
           <div>
             <nav>
-              <Link to='/'>Home Link</Link>
-              <Link to='/componenttwo'>Link to the Second Page</Link>
-              <Link to='/componentthree'>Link to the Third Page</Link>
+              <Link to='/'>Home Page</Link>
             </nav>
-              <Route exact path='/' component={ComponentOne} />
-              <Route path='/componenttwo' component={ComponentTwo} />
-              <Route path='/componentthree' component={ComponentThree} />
+              <Route exact path='/' component={Home} />
+              <Route exact path='/menu' component={MenuList} />
           </div>
-        </Router>
       </div>
+    </Router>
     );
   }
 }
