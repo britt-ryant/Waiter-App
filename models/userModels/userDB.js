@@ -8,14 +8,14 @@ module.exports = {
     return db.query(`SELECT * FROM users`);
   },
 
-  findById(id) {
+  getOne(username) {
     console.log(`Inside the GetOne function on the usersDB model`);
     return db.one(
       `
         SELECT * FROM users
-        WHERE id=$1
+        WHERE user_name=$1
       `,
-      [id]
+      [username]
     );
   },
 
