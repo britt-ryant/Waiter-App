@@ -10,7 +10,7 @@ CREATE TABLE users (
   user_password VARCHAR(255)
 )
 
-CREATE TABLE menu_item (
+CREATE TABLE menu_items (
   id SERIAL PRIMARY KEY,
   cost integer default 0,
   course integer default 0,
@@ -19,7 +19,7 @@ CREATE TABLE menu_item (
   allergy integer default 0 REFERENCES allergy(id) ON UPDATE CASCADE ON DELETE CASCADE,
 )
 
-CREATE TABLE allergy (
+CREATE TABLE allergies (
   id SERIAL PRIMARY KEY,
   description VARCHAR(255),
 )
