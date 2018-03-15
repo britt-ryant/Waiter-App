@@ -16,6 +16,7 @@ class App extends Component {
           <div>
             <nav>
               <Link to='/'>Home Page</Link>
+              <Link to='/menu'>Menu Page</Link>
             </nav>
               <Route exact path='/' component={Home} />
               <Route exact path='/menu' component={MenuList} />

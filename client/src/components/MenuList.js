@@ -15,14 +15,14 @@ class MenuList extends Component {
     axios
       .get('/api/menu')
       .then(item => {
-        console.log('GETTING AN ITEM WORKED--->', item);
+        console.log('GETTING ITEMS WORKED--->', item.data.data);
         this.setState({
           apiDataLoaded: true,
           apiData: item.data.data,
         });
       })
       .catch(err => {
-        console.log('GETTING AN ITEM FAILED--->', err);
+        console.log('GETTING ITEMS FAILED--->', err);
       });
   }
 
