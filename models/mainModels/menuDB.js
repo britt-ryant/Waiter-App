@@ -16,7 +16,7 @@ module.exports = {
         WHERE id=$1
       `,
       [id]
-    )
+    );
   },
 
   makeOne(item) {
