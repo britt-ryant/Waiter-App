@@ -15,12 +15,20 @@ class App extends Component {
       userData: null,
     };
     this.loggingIn = this.loggingIn.bind(this);
+    this.loggingOut = this.loggingOut.bind(this);
   }
 
   loggingIn(user) {
     console.log(user);
     this.setState({
       isLoggedIn: true,
+    });
+  }
+
+  loggingOut(e) {
+    e.preventDefault();
+    this.setState({
+      isLoggedIn: false,
     });
   }
 
@@ -40,6 +48,9 @@ class App extends Component {
               <Route exact path="/menu/add" component={MenuItemAddForm} />
               <Route path="/menu/edit/:id" component={MenuItemEditForm} />
             </div>
+            <form onSubmit = {this.loggingOut}>
+              <input type="submit" value="Log Out" />
+            </form>
           </div>
         </Router>
       );
