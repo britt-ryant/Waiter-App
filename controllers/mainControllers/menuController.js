@@ -22,7 +22,7 @@ module.exports = {
 
   show(req, res, next) {
     menu_db
-      .getOne()
+      .findById(req.params.id)
       .then(menuItem => {
         res.json({
           message: 'got one menu item',
@@ -38,7 +38,12 @@ module.exports = {
 
   create(req, res, next) {
     menuDB
-      .makeOne()
+      .makeOne({
+        name: req.body.name,
+        description: req.body.description,
+        course: req.body.course,
+        cost: req.body.cost,
+      })
       .then(menuItem => {
         res.json({
           message: 'created one menu item',
@@ -56,7 +61,12 @@ module.exports = {
 
   update(req, res, next) {
     menuDB
-      .updateInfo()
+      .updateInfo({
+        name: req.body.name,
+        description: req.body.description,
+        course: req.body.course,
+        cost: req.body.cost,
+      })
       .then(menuItem => {
         res.json({
           message: 'updated one menu item',
@@ -74,7 +84,7 @@ module.exports = {
 
   destroy(req, res, next) {
     menuDB
-      .delete()
+      .delete(req.params.id)
       .then(() => {
         console.log('DESTROYING ITEM WORKED');
 

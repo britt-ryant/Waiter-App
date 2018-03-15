@@ -9,7 +9,7 @@ module.exports = {
   },
 
   findById(id) {
-    console.log(`Inside the GetOne function on the menuDB model`);
+    console.log(`Inside the GetOne function on the menuDB model`, id);
     return db.one(
       `
         SELECT * FROM menu_items
@@ -20,12 +20,12 @@ module.exports = {
   },
 
   makeOne(item) {
-    console.log(`Inside the makeOne function on the menuDB model`);
+    console.log(`Inside the makeOne function on the menuDB model`, item);
     return db.one(
       `
         INSERT INTO menu_items
-        (cost, course, name, description, allergy)
-        VALUES ($1, $2, $3, $4, $5)
+        (cost, course, name, description)
+        VALUES ($1, $2, $3, $4)
         RETURNING *
       `,
       [item.cost, item.course, item.name, item.description, item.allergy]
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   updateInfo(item) {
-    console.log(`Inside the updateInfo function on the menuDB model`);
+    console.log(`Inside the updateInfo function on the menuDB model`, item);
     return db.one(
       `
         UPDATE menu_items SET
@@ -41,8 +41,7 @@ module.exports = {
           course = $2,
           name = $3,
           description = $4,
-          allergy = $5
-        WHERE id = $6
+        WHERE id = $5
         RETURNING *
       `,
       [item.cost, item.course, item.name, item.description, item.allergy]
@@ -50,7 +49,7 @@ module.exports = {
   },
 
   delete(id) {
-    console.log(`Inside the delete function on the menuDB model`);
+    console.log(`Inside the delete function on the menuDB model`, id);
     return db.none(
       `
         DELETE FROM menu_items

@@ -1,6 +1,6 @@
 \c menu_db;
 
-DROP TABLE IF EXISTS menu_item;
+DROP TABLE IF EXISTS menu_items;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
