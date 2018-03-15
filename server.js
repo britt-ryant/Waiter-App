@@ -25,6 +25,7 @@ app.set(`views`, path.join(__dirname, `views`));
 app.set(`view engine`, `ejs`);
 
 app.use('/api/menu', menuRouter);
+app.use('/api/auth', userRouter);
 
 //******** testing that routes and controllers work ************
 app.use(`/testmenu`, menuRouter);

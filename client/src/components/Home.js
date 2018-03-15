@@ -4,6 +4,7 @@ import Footer from './Footer';
 
 class ComponentOne extends Component {
   render() {
+    console.log(this.props);
     return (
       <div>
         <Header />
